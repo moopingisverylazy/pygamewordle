@@ -21,12 +21,12 @@ white = (255, 255, 255)
 black = (0, 0, 0)      
 
 # fonts
-font_title = pygame.font.Font('Silkscreen/Silkscreen-Bold.ttf', 48)
-font_key = pygame.font.Font('Silkscreen/Silkscreen-Regular.ttf', 18)
-font_hint = pygame.font.Font('Silkscreen/Silkscreen-Regular.ttf', 24)
-font_timer = pygame.font.Font('Silkscreen/Silkscreen-Regular.ttf', 28)
-font_result = pygame.font.Font('Silkscreen/Silkscreen-Regular.ttf', 40)
-font_tile = pygame.font.Font('Silkscreen/Silkscreen-Regular.ttf', 40)
+font_title = pygame.font.SysFont('Silkscreen', 48)
+font_key = pygame.font.SysFont('Silkscreen', 20)
+font_hint = pygame.font.SysFont('Silkscreen', 24)
+font_timer = pygame.font.SysFont('Silkscreen', 28)
+font_result = pygame.font.SysFont('Silkscreen', 48)
+font_tile = pygame.font.SysFont('Silkscreen', 50)
 
 
 # backgrounds
@@ -131,7 +131,7 @@ class ingame:
         self.tile_size = 50 
         self.spacing = 8    
         self.grid_x = (screen_width - (self.cols * self.tile_size + (self.cols - 1) * self.spacing)) // 2 
-        self.grid_y = 80
+        self.grid_y = 80 
         self.tiles = [] 
         
         # สร้างแป้นพิมพ์บนหน้าจอ
@@ -491,8 +491,8 @@ class App:
                     if game_result in ["WIN", "LOSE"]:
                         self.manager.end_game(game_result)
 
-    # วาดปุ่ม + text
-    def draw_screen(self, bg_key, buttons=None, extra_text=None, text_pos=(375, 379)):
+    # วาดหน้าจอพื้นฐาน
+    def draw_screen(self, bg_key, buttons=None, extra_text=None, text_pos=(360, 365)):
         self.screen.blit(self.manager.bgs[bg_key], (0, 0))
         
         if buttons:
